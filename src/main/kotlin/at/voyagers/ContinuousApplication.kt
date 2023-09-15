@@ -17,6 +17,3 @@ class HealthCheckController {
     @GetMapping("/ping")
     fun healthCheck(): String = "pong"
 }
-
-
-
