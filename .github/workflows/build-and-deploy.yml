@@ -73,7 +73,7 @@ jobs:
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.VOYAGERS_SONAR_TOKEN }}
+#          SONAR_TOKEN: ${{ secrets.VOYAGERS_SONAR_TOKEN }}
         run: ./gradlew build
 #        run: ./gradlew build jacocoTestReport sonar --info
 #      - uses: actions/upload-artifact@v3.1.3

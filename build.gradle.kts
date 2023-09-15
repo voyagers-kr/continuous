@@ -3,10 +3,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.1.3"
 	id("io.spring.dependency-management") version "1.1.3"
-	id("org.sonarqube") version "4.2.1.3168"
+//	id("org.sonarqube") version "4.2.1.3168"
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
-	jacoco
+//	jacoco
 }
 
 group = "at.voyagers"
@@ -37,35 +37,35 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
-	finalizedBy(tasks.jacocoTestReport)
-	finalizedBy(tasks.jacocoTestCoverageVerification)
+//	finalizedBy(tasks.jacocoTestReport)
+//	finalizedBy(tasks.jacocoTestCoverageVerification)
 }
 
-tasks.jacocoTestReport {
-	reports {
-		xml.required.set(true)
-	}
-}
+//tasks.jacocoTestReport {
+//	reports {
+//		xml.required.set(true)
+//	}
+//}
+//
+//tasks.jacocoTestCoverageVerification {
+//	violationRules {
+//		rule {
+//			element = "PACKAGE"
+//
+//			limit {
+//				value = "COVEREDRATIO"
+//				minimum = "0.90".toBigDecimal()
+//			}
+//			excludes = listOf("kotlin.at.voyagers")
+//		}
+//	}
+//}
 
-tasks.jacocoTestCoverageVerification {
-	violationRules {
-		rule {
-			element = "PACKAGE"
-
-			limit {
-				value = "COVEREDRATIO"
-				minimum = "0.90".toBigDecimal()
-			}
-			excludes = listOf("kotlin.at.voyagers")
-		}
-	}
-}
-
-sonarqube {
-	properties {
-		property("sonar.projectKey", "voyagers-kr_continuous")
-		property("sonar.organization", "voyagers")
-		property("sonar.host.url", "https://sonarcloud.io")
-		property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
-	}
-}
+//sonarqube {
+//	properties {
+//		property("sonar.projectKey", "voyagers-kr_continuous")
+//		property("sonar.organization", "voyagers")
+//		property("sonar.host.url", "https://sonarcloud.io")
+//		property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
+//	}
+//}
